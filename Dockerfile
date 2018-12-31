@@ -9,5 +9,10 @@ RUN mv apache-jmeter-5.0 /jmeter
 ENV JMETER_HOME /jmeter
 
 
+#Copy test.jmx
+COPY test.jmx /test.jmx
+RUN chmod -R 777 /test.jmx
+
+
 # Add Jmeter to the Path
 ENV PATH $JMETER_HOME/bin:$PATH
